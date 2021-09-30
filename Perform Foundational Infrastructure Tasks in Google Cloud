@@ -1,0 +1,57 @@
+------------------------------Perform Foundational Infrastructure Tasks in Google Cloud : Challenge lab----------------------------------------
+
+------------------------------------------------------
+Task 1 
+To create a bucket:
+
+In the Cloud Console, go to Navigation menu > Cloud Storage > Browser.
+
+Click Create Bucket:
+
+Enter your bucket information and click Continue to complete each step:
+
+Name your bucket: Enter a unique name for your bucket. For this lab, you can use your Project ID as the bucket name because it will always be unique.
+Bucket naming rules:
+Do not include sensitive information in the bucket name, because the bucket namespace is global and publicly visible.
+Bucket names must contain only lowercase letters, numbers, dashes (-), underscores (_), and dots (.). Names containing dots require [verification](https://cloud.google.com/storage/docs/domain-name-verification).
+Bucket names must start and end with a number or letter.
+Bucket names must contain 3 to 63 characters. Names containing dots can contain up to 222 characters, but each dot-separated component can be no longer than 63 characters.
+Bucket names cannot be represented as an IP address in dotted-decimal notation (for example, 192.168.5.4).
+Bucket names cannot begin with the "goog" prefix.
+Bucket names cannot contain "google" or close misspellings of "google".
+Also, for DNS compliance and future compatibility, you should not use underscores (_) or have a period adjacent to another period or dash. For example, ".." or "-." or ".-" are not valid in DNS names.
+Choose Region for Location type and us-east1 (South Carolina) for Location.
+
+Choose Standard for default storage class.
+
+Choose Uniform for Access control.
+
+Click Create.
+----------------------------------------------------------
+
+----------------------------------------------------------
+Task 2
+To use a Pub/Sub, you create a topic to hold data and a subscription to access data .published to the topic.
+
+Click Navigation menu > Pub/Sub > Topics.
+Click Create topic
+The topic must have a unique name. For this lab, name your topic MyTopic. In the Create a topic dialog:
+For Topic ID, type MyTopic.
+Leave Encryption at the default value.
+Click CREATE TOPIC.
+------------------------------------------------------------
+
+------------------------------------------------------------
+Task 3
+Create a Cloud Function that executes every time an object is created in the bucket you created in task 1. The function is written in Node.js 14. Make sure you set the Entry point (Function to execute) to thumbnail and Trigger to Cloud Storage.
+
+In line 16 of index.js replace the text REPLACE_WITH_YOUR_TOPIC ID with the Topic ID you created in task 2.
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+Task 4
+Return to the Username 1 Cloud Console page.
+Select Navigation menu > IAM & Admin > IAM. You are now in the "IAM & Admin" console
+ Then click the pencil icon next to Username 2.
+ Remove Project Viewer access for Username 2 by clicking the trashcan icon next to the role name. Then click SAVE.
+ -------------------------------------------------------------
